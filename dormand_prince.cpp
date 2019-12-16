@@ -319,29 +319,19 @@ long double *dormand_prince::integration(long double t_start,
   return a5;
 }
 void dormand_prince::plotter(int k, int l, int size) {
-  // std::cout << "Element" << result_list[3][500] << " " <<
-  // result_list[49999][1];
 
   FILE *pipe = _popen("B:/gnuplot/bin/gnuplot.exe", "w");
   if (pipe != nullptr) {
     fprintf(pipe, "set term win\n");
-    // fprintf(pipe, "plot(x, sin(x))\n");//a simple example function
+
     system("pause");
-    // cout << result_list[result_list.size()][k] << endl;
+
     fprintf(pipe, "plot '-' with lines\n");
     for (int i = 0; i < size; i++)
       fprintf(pipe, "%lf %lf\n", (double)result_list[i][k],
               (double)result_list[i][2]);
     fprintf(pipe, "%s\n", "e");
 
-    // fprintf(pipe, "set term pngcairo\n");
-    // fprintf(pipe, "set output \"myFile.png\"\n");
-    // fprintf(pipe, "replot\n");
-    // fprintf(pipe, "set term win\n");
-    /*system("pause");
-    for (double i = -10; i <= 10; i += 1e-2)
-            fprintf(pipe, "%lf %lf\n", i, 1. / (1 + 40 * 40 * i * i));
-    fprintf(pipe, "%s\n", "e");*/
     fflush(pipe);
   } else
     puts("Could not open the file\n");
@@ -349,8 +339,5 @@ void dormand_prince::plotter(int k, int l, int size) {
   if (pipe)
     _pclose(pipe);
 
-  /*RECT* b1, *b2;
-  HWND a;
-  ScrollWindow(a, 1, 1, b1, b2);*/
   system("pause");
 }
