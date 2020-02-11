@@ -20,10 +20,10 @@ int main() {
   start_conditions[2] = 0.L;
   start_conditions[3] = -2.0317326295573368357302057924;
 
-  Math_Pendulum b(0.3, 10, 1, 0.1);
-  b.run(30);
-  //  Model_Arenstorf *b = new Model_Arenstorf(4, start_conditions);
-  //  b->run();
+  Math_Pendulum az(0.3l, 10l, 1l, 0.1l);
+
+  Model_Arenstorf *b = new Model_Arenstorf(4, start_conditions);
+  b->run();
   //  Spring p(1, 1e-2, 10, 0.5, 0);
   //  p.run(10);
   //  Spring d(0, 1e-2, 10, 0.5, 0.3);

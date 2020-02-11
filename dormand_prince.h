@@ -24,6 +24,9 @@ public:
   long double h_new(long double eps);
   long double *integration(long double t_start, long double t_finish,
                            Object *example);
+  Object *object1 = new Object();
+  object.
+
   // void plotter(int k, int l,int size);
 };
 const long double c[7] = {0.L, 0.2L, 0.3L, 0.8L, 8.L / 9.L, 1.L, 1.L};

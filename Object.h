@@ -17,3 +17,8 @@ public:
   long double **result_list = nullptr;
   void plotter(int k, int l, int size);
 };
+
+class NewObject : public Object {
+
+  void run(long double t_start, long double t_finish) override;
+};
